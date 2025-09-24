@@ -32,3 +32,47 @@ document.addEventListener('DOMContentLoaded', function() {
     lanzarConfeti();
 });
 
+// ...existing code...
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Código existente...
+    
+    // Funcionalidad del slider
+    const slider = document.querySelector('.slider');
+    if (slider) {
+        const slides = document.querySelectorAll('.slide');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentSlide = 0;
+
+        function goToSlide(n) {
+            slider.style.transform = `translateX(${-100 * n}%)`;
+            currentSlide = n;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            goToSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            goToSlide(currentSlide);
+        }
+
+        if (prevButton && nextButton) {
+            prevButton.addEventListener('click', prevSlide);
+            nextButton.addEventListener('click', nextSlide);
+        }
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('verFotos');
+    if (btn) {
+        btn.addEventListener('click', () => {
+            window.location.href = 'MasRecuerdos.html';
+        });
+    }
+});
