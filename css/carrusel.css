@@ -1,0 +1,211 @@
+/* Contenedor principal */
+.carousel-container {
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  color: white;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  min-height: calc(100vh - 80px); /* Ajustamos el alto para dejar espacio al footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Título */
+.carousel-container h2 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  background: linear-gradient(90deg, #fff, #e6e6e6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback para navegadores que no soportan background-clip */
+}
+
+/* Carrusel */
+.carousel {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Contenedor de slides */
+.slides {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  background: rgba(0,0,0,0.8);
+}
+
+/* Imágenes con fade */
+.slides img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  object-fit: contain;
+  padding: 10px;
+  transition: opacity 0.5s ease-in-out;
+}
+.slides img.active {
+  opacity: 1;
+}
+
+/* Botones */
+.buttons button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.15);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+.buttons button:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* Indicadores mejorados */
+.indicators {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Mejoras de accesibilidad */
+.carousel:focus-within {
+    outline: 3px solid #4A90E2;
+    outline-offset: 4px;
+}
+
+/* Pantalla de carga */
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+/* Optimizaciones móviles */
+@media (hover: none) {
+    .carousel button {
+        opacity: 1;
+        background: rgba(0,0,0,0.5);
+    }
+}
+
+/* Footer mejorado */
+footer {
+    width: 100%;
+    padding: 20px;
+    margin-top: 9px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    bottom: 0;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin: 0;
+}
+
+footer span {
+    color: #ff4d4d;
+    animation: latido 1.5s ease infinite;
+}
+
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .carousel-container h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .carousel {
+        width: 95%;
+    }
+
+    .buttons button {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel-container {
+        padding: 10px;
+    }
+
+    .carousel-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .buttons button {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}

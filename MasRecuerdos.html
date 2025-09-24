@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería de recuerdos especiales">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="preload" href="css/carrusel.css" as="style">
+  <link rel="preload" href="css/estilos.css" as="style">
+  <link rel="stylesheet" href="css/carrusel.css">
+  <link rel="stylesheet" href="css/estilos.css">
+  <title>Recuerdos</title>
+</head>
+<body>
+    <div class="carousel-container" role="region" aria-label="Galería de imágenes">
+        <h2>Un Viaje en Imágenes</h2>
+        
+        <div class="carousel" aria-live="polite">
+            <div class="slides">
+                <img src="img/foto1.jpg" alt="Recuerdo 1" class="active" loading="lazy">
+                <img src="img/foto2.jpg" alt="Recuerdo 2" loading="lazy">
+                <img src="img/foto3.jpg" alt="Recuerdo 3" loading="lazy">
+                <img src="img/foto4.jpg" alt="Recuerdo 4" loading="lazy">
+                <img src="img/foto5.jpg" alt="Recuerdo 5" loading="lazy">
+                <img src="img/foto6.jpg" alt="Recuerdo 6" loading="lazy">
+                <img src="img/foto7.jpg" alt="Recuerdo 7" loading="lazy">
+            </div>
+
+            <!-- Botones -->
+            <div class="buttons">
+                <button class="prev" aria-label="Imagen anterior">&#10094;</button>
+                <button class="next" aria-label="Imagen siguiente">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Indicadores -->
+        <div class="indicators" role="tablist">
+          <span class="dot active" aria-label="Ir a la imagen 1"></span>
+          <span class="dot" aria-label="Ir a la imagen 2"></span>
+          <span class="dot" aria-label="Ir a la imagen 3"></span>
+          <span class="dot" aria-label="Ir a la imagen 4"></span>
+          <span class="dot" aria-label="Ir a la imagen 5"></span>
+          <span class="dot" aria-label="Ir a la imagen 6"></span>
+          <span class="dot" aria-label="Ir a la imagen 7"></span>
+        </div>
+    </div>
+
+    <footer>
+        <p>Hecho con <span role="img" aria-label="corazón">❤️</span> por MaxtardoDev</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
